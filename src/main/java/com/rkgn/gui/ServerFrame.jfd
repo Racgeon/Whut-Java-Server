@@ -1,0 +1,50 @@
+JFDML JFormDesigner: "8.2.0.0.331" Java: "17.0.9" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class javax.swing.BoxLayout ) {
+			"axis": 1
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+				name: "panel"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label"
+					"text": "端口号"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "portField"
+					"preferredSize": new java.awt.Dimension( 150, 30 )
+					"text": "8888"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "startButton"
+					"text": "启动"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "startButtonMouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "closeButton"
+					"text": "关闭"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "closeButtonMouseClicked", true ) )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane"
+				"preferredSize": new java.awt.Dimension( 3, 400 )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea"
+					"font": new java.awt.Font( "等线", 0, 16 )
+					"editable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 190, 145 )
+			"size": new java.awt.Dimension( 435, 560 )
+		} )
+	}
+}
